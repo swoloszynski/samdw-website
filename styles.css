@@ -48,7 +48,8 @@ img{max-width:100%;display:block;}
 .window-bar{background:var(--ink);display:flex;align-items:center;gap:6px;padding:8px 12px;}
 .dot{width:10px;height:10px;border-radius:50%;}
 .window-name{color:#cdd1dd;font-family:var(--mono);font-size:11px;margin-left:8px;}
-.photo{aspect-ratio:1/1;width:100%;height:auto;display:block;object-fit:cover;object-position:center 25%;background:#f1eee7;}
+.photo{aspect-ratio:1/1;width:100%;height:auto;display:block;object-fit:cover;object-position:center 25%;background:#f1eee7;
+  cursor:default;-webkit-user-drag:none;user-select:none;-webkit-user-select:none;}
 
 /* sections */
 .section{padding:64px 0 90px;}
