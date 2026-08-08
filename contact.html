@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Sam Duong Woloszynski</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact">
+<div class="topbar"><div class="topbar-inner"><span>◆ NOW BOOKING A FEW PROJECTS</span><span>ATLANTA, GA</span></div></div>
+<div class="wrap">
+  <header class="site-header">
+    <a class="logo" href="index.html">Sam Duong Woloszynski<span>.</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work with me</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section contact" style="max-width:860px;">
+    <div class="kicker">◆ Contact + office hours</div>
+    <h1 class="h1">Contact &amp; office hours</h1>
+    <div class="contact-grid">
+      <div class="panel s-coral">
+        <h2>Drop me a line</h2>
+        <p class="sub">Want to make something together?</p>
+        <div id="sent" class="sent-msg hidden">Thanks — your note is on its way. I'll be in touch soon.</div>
+        <form id="contactForm" action="mailto:hello@samduong.co" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" rows="4" placeholder="What are you working on?" required></textarea>
+          <button class="btn btn-primary" type="submit">Send message</button>
+        </form>
+        <p class="note">Or email me directly at <a href="mailto:hello@samduong.co">hello@samduong.co</a>.</p>
+      </div>
+      <div class="panel s-teal">
+        <h2>Office hours</h2>
+        <p>I'm always happy to connect with people building interesting things or wrestling with hard problems.</p>
+        <p>Available most Friday mornings for a 30-minute conversation — to connect, ask advice, or just talk shop.</p>
+        <p class="close">I'm looking forward to meeting you.</p>
+        <a class="btn btn-gold" href="#">Book appointment →</a>
+        <p class="avail">Atlanta-based and available for selected remote and in-person projects.</p>
+      </div>
+    </div>
+    <div class="find">
+      <span class="label">Find me</span>
+      <a class="chip" href="#">LinkedIn</a>
+      <a class="chip" href="#">Nourished Heart Collective</a>
+      <a class="chip" href="#">Art / Instagram</a>
+      <a class="chip" href="#">Writing</a>
+    </div>
+  </section>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      this.classList.add('hidden');
+      document.getElementById('sent').classList.remove('hidden');
+    });
+  </script>
+
+  <footer class="site-footer"><span>© 2026 Sam Duong Woloszynski</span><span>Atlanta, GA ◆</span></footer>
+</div>
+</body>
+</html>
