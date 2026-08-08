@@ -1,5 +1,6 @@
 /* Sam Duong Woloszynski — Studio static site */
 :root{
+  color-scheme:light; /* site is light-only; keeps embeds + form controls light in dark mode */
   --bg:#f6f4ef; --ink:#232a3b; --coral:#c14953; --teal:#3a8a86; --gold:#e7c766;
   --muted:#4c5265; --muted2:#6b7180; --line:#cdd1dd; --field:#fbfaf7; --card:#fff;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -100,6 +101,8 @@ textarea{resize:vertical;}
 .note a{color:var(--coral);border-bottom:1px solid var(--coral);}
 .sent-msg{border:1.5px solid var(--teal);border-radius:10px;background:#eef7f6;padding:18px;font-size:15px;line-height:1.55;color:#2c3346;}
 .hidden{display:none;}
+/* third-party embed (letterbird contact form) — relies on the panel border + the embed's own outline */
+.embed-frame iframe{display:block;width:100%;border:0;color-scheme:light;}
 .find{margin-top:22px;border:1.5px solid var(--ink);border-radius:12px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:#fff;}
 .find .label{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-right:6px;}
 .chip{border:1.5px solid var(--line);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:600;color:var(--ink);}

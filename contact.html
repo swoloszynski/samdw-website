@@ -26,14 +26,9 @@
       <div class="panel s-coral">
         <h2>Drop me a line</h2>
         <p class="sub">Want to make something together?</p>
-        <div id="sent" class="sent-msg hidden">Thanks — your note is on its way. I'll be in touch soon.</div>
-        <form id="contactForm" action="mailto:hello@samduong.co" method="post" enctype="text/plain">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <textarea name="message" rows="4" placeholder="What are you working on?" required></textarea>
-          <button class="btn btn-primary" type="submit">Send message</button>
-        </form>
-        <p class="note">Or email me directly at <a href="mailto:hello@samduong.co">hello@samduong.co</a>.</p>
+        <div class="embed-frame">
+          <script data-letterbirduser="contact-samdw" src="https://letterbird.co/embed/v1.js"></script>
+        </div>
       </div>
       <div class="panel s-teal">
         <h2>Office hours</h2>
@@ -52,14 +47,6 @@
       <a class="chip" href="#">Writing</a>
     </div>
   </section>
-  <script>
-    document.getElementById('contactForm').addEventListener('submit',function(e){
-      e.preventDefault();
-      this.classList.add('hidden');
-      document.getElementById('sent').classList.remove('hidden');
-    });
-  </script>
-
   <footer class="site-footer"><span>© 2026 Sam Duong Woloszynski</span><span>Atlanta, GA ◆</span></footer>
 </div>
 </body>
