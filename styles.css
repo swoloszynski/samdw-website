@@ -42,6 +42,8 @@ img{max-width:100%;display:block;}
 .btn-ghost:hover{box-shadow:4px 4px 0 var(--teal);}
 .btn-gold{background:#fff;color:var(--ink);box-shadow:3px 3px 0 var(--gold);}
 .btn-gold:hover{box-shadow:4px 4px 0 var(--gold);}
+.btn-coral{background:#fff;color:var(--ink);box-shadow:3px 3px 0 var(--coral);}
+.btn-coral:hover{box-shadow:4px 4px 0 var(--coral);}
 .btn-teal{background:#327a76;color:#fff;box-shadow:3px 3px 0 var(--ink);}
 .btn-teal:hover{box-shadow:4px 4px 0 var(--ink);}
 .btn-gold-solid{background:var(--gold);color:var(--ink);box-shadow:3px 3px 0 var(--ink);}
