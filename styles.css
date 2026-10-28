@@ -42,6 +42,11 @@ img{max-width:100%;display:block;}
 .btn-ghost:hover{box-shadow:4px 4px 0 var(--teal);}
 .btn-gold{background:#fff;color:var(--ink);box-shadow:3px 3px 0 var(--gold);}
 .btn-gold:hover{box-shadow:4px 4px 0 var(--gold);}
+.btn-teal{background:#327a76;color:#fff;box-shadow:3px 3px 0 var(--ink);}
+.btn-teal:hover{box-shadow:4px 4px 0 var(--ink);}
+.btn-gold-solid{background:var(--gold);color:var(--ink);box-shadow:3px 3px 0 var(--ink);}
+.btn-gold-solid:hover{box-shadow:4px 4px 0 var(--ink);}
+.btn-sm{padding:9px 16px;font-size:14px;}
 
 /* window / photo */
 .window{border:1.5px solid var(--ink);border-radius:12px;box-shadow:6px 6px 0 var(--coral);background:#fff;overflow:hidden;width:100%;}
@@ -58,20 +63,21 @@ img{max-width:100%;display:block;}
 
 /* featured cards */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.card{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:22px;transition:all .15s;display:block;}
-.card:hover{transform:translate(-1px,-1px);}
+.card{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:22px;transition:all .15s;display:flex;flex-direction:column;}
+a.card:hover{transform:translate(-1px,-1px);}
 .card.s-coral{box-shadow:4px 4px 0 var(--coral);}
-.card.s-coral:hover{box-shadow:6px 6px 0 var(--coral);}
+a.card.s-coral:hover{box-shadow:6px 6px 0 var(--coral);}
 .card.s-teal{box-shadow:4px 4px 0 var(--teal);}
-.card.s-teal:hover{box-shadow:6px 6px 0 var(--teal);}
+a.card.s-teal:hover{box-shadow:6px 6px 0 var(--teal);}
 .card.s-gold{box-shadow:4px 4px 0 var(--gold);}
-.card.s-gold:hover{box-shadow:6px 6px 0 var(--gold);}
+a.card.s-gold:hover{box-shadow:6px 6px 0 var(--gold);}
 .card-num{font-family:var(--mono);font-size:12px;margin-bottom:12px;}
 .card.s-coral .card-num{color:var(--coral);}
 .card.s-teal .card-num{color:var(--teal);}
 .card.s-gold .card-num{color:var(--gold);}
 .card-title{font-size:18px;font-weight:600;line-height:1.2;margin:0 0 10px;}
-.card-desc{font-size:14px;line-height:1.55;color:var(--muted);}
+.card-desc{font-size:14px;line-height:1.55;color:var(--muted);flex:1;}
+.card .btn{align-self:flex-start;margin-top:20px;}
 .card-shot{width:calc(100% + 44px);max-width:none;margin:-22px -22px 18px;aspect-ratio:8/5;object-fit:cover;object-position:top left;border-bottom:1.5px solid var(--ink);border-radius:10.5px 10.5px 0 0;}
 
 /* about */
