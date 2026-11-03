@@ -1,0 +1,518 @@
+# Speaking page content for samdw.org/speaking
+#
+# How to fill this in:
+# - Add one entry under `talks:` per talk. Copy the template at the bottom.
+# - If you gave the same talk at several events, keep one entry and list each
+#   event under `deliveries:`. If you give it at different lengths, keep one
+#   entry and set `length:` on each delivery.
+# - `topics:` and `audience:` on each talk must use ids from the `topics:` and
+#   `audiences:` lists below. A talk can have as many as fit. These power the
+#   filters.
+# - Leave optional fields blank ("") or delete them. Required fields are marked.
+
+page:
+  heading: "Speaking"
+  intro: >-
+    I talk about how we make agreements, build, learn, and navigate mistakes
+    in relationships, teams, and organizations.
+  booking_note: >-
+    Booking talks, workshops, and panels for conferences, companies, and
+    community organizations.
+  booking_url: "contact.html"
+  headshot: "img/productcamp2025.jpg"   # path in img/
+  speaker_bio_short: ""   # 1–2 sentences organizers can paste into a program
+  speaker_bio_long: ""    # one paragraph for event pages
+
+# "Who's it for?" filter chips, sorted by number of talks (most first; ties
+# keep this order). Audiences with no talks are hidden.
+audiences:
+  - id: product
+    label: "Product managers"
+  - id: ux
+    label: "UX researchers"
+  - id: leaders
+    label: "Leaders"
+  - id: educators
+    label: "Educators"
+  - id: students
+    label: "Students"
+  - id: community
+    label: "Community"
+  - id: speakers
+    label: "Aspiring speakers"
+
+# Topic filter chips, sorted by number of talks (most first; ties keep this
+# order). Topics with no talks are hidden.
+# Edit labels freely; keep ids lowercase-with-dashes.
+topics:
+  - id: trauma
+    label: "Trauma"
+  - id: consent
+    label: "Consent"
+  - id: somatics
+    label: "Somatics"
+  - id: power
+    label: "Power dynamics"
+  - id: repair
+    label: "Repair & accountability"
+  - id: research
+    label: "UX Research"
+  - id: facilitation
+    label: "Facilitation"
+  - id: ai
+    label: "AI"
+  - id: stakeholders
+    label: "Stakeholders & org dynamics"
+  - id: strategy
+    label: "Product strategy"
+  - id: collaboration
+    label: "Collaboration & teamwork"
+  - id: art
+    label: "Art"
+
+# Private teacher training: "The Trauma-Sensitive Classroom" (2026)
+
+
+
+# NSEC: "The Power We Hold" (2026)
+# Product Camp: "Navigating No-Strategy No Man's Land" (2025)
+# Product Camp Pre-Conference Programming: "Creating Great Workshops" (2025)
+# NSEC featured speaker: "A Next Generation Consent Framework" (2024)
+# SFQP: "No Cancelling Allowed: Mistakes, Messes, and Making It Right"
+# SWLF Conference: "Befriending the Nervous System"
+# Product Camp: "Protect Your Peace: Working With Difficult Stakeholders" (2024)
+# MODA: "Make at MODA: Light it up!"
+# Product Camp Best Session Award: "Crafting impactful meetings" (2023)
+# Atlanta AI Product Forum: "Leveraging AI to Solve Customer Problems" (2023)
+# "Making research a team sport" (2022)
+# "User Interviews Crash Course" (2022)
+# "Agile: You're doing it wrong" (2019)
+
+
+talks:
+  - id: beltline-airships
+    title: "Lantern-Making Workshop: Flying Airships for the Atlanta Beltline Lantern Parade"
+    subtitle: ""
+    description: >-
+      A two-day workshop for building fantastical flying airships that glow
+      brightly in the parade.
+    topics: [art]
+    audience: [community]
+    format: workshop
+    featured: false
+    image: ""
+    deliveries:
+      - event: "Chantelle Rytter's Lantern Parade Art Studio"
+        event_url: ""
+        date: "2026-09"
+        location: "Atlanta, GA"
+        role: instructor
+    links:
+      slides: ""
+      video: ""
+
+  - id: trust-me-with-the-truth
+    title: "You Can Trust Me with the Truth"
+    subtitle: ""
+    description: >-
+      A workshop for leaders that want to build trust-based, candid feedback
+      culture.
+    topics: [collaboration, somatics, power, stakeholders]
+    audience: [leaders]
+    format: workshop
+    featured: false
+    image: ""
+    deliveries:
+      - event: "Nourished Heart Collective"
+        event_url: ""
+        date: "2026-11"
+        location: "Online"
+        role: facilitator
+        co-presenter: Pippin Stoesz
+    links:
+      slides: ""
+      video: ""
+
+  - id: comfortable-with-no
+    title: "Getting Comfortable with No"
+    subtitle: ""
+    description: >-
+      A practical workshop for practicing everyday boundary skills for giving
+      and receiving no.
+    topics: [consent, somatics]
+    audience: [students]
+    format: workshop
+    featured: false
+    image: ""
+    deliveries:
+      - event: "Private training"
+        event_url: ""
+        date: "2026-10"
+        location: "New Jersey"
+        role: facilitator
+    links:
+      slides: ""
+      video: ""
+
+  - id: asking-for-what-you-want
+    title: "Asking for What You Want"
+    subtitle: ""
+    description: >-
+      An interactive workshop for getting comfortable with identifying and
+      asking for our desires, so that we can make clear agreements.
+    topics: [consent, somatics]
+    audience: [students]
+    format: workshop
+    featured: false
+    image: ""
+    deliveries:
+      - event: "Private training"
+        event_url: ""
+        date: "2026-10"
+        location: "New Jersey"
+        role: facilitator
+    links:
+      slides: ""
+      video: ""
+
+  - id: trauma-classroom
+    title: "The Trauma-Sensitive Classroom"
+    subtitle: ""
+    description: >-
+      A full-day teacher training for exploring trauma, power dynamics,
+      creating safer learning environments, and developing student agency.
+    topics: [trauma, power, consent]
+    audience: [educators]  # ids from `audiences:`
+    format: workshop
+    featured: false
+    image: ""
+    deliveries:
+      - event: "Private training"
+        event_url: ""
+        date: "2026"                         # add the month if you know it, e.g. "2026-03"
+        location: "New Jersey"
+        role: facilitator
+    links:
+      slides: ""
+      video: ""
+
+  - id: agile         # required, unique, lowercase-with-dashes
+    title: "Agile: You're Doing It Wrong"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      A case study about how my team learned that ceremony isn't enough to stay nimble and respond when circumstances change.
+    topics: [collaboration]  # required, ids from `topics:`
+    audience: [product]  # ids from `audiences:`
+    format: talk                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Product Camp Atlanta"                  # required
+        event_url: ""
+        date: "2019-10"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Atlanta, GA"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+    links:
+      slides: ""
+      video: ""
+
+  - id: interviews          # required, unique, lowercase-with-dashes
+    title: "User Interviews Crash Course"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      A skill-building workshop for product managers who want to conduct better UX research.
+    topics: [research, collaboration]  # required, ids from `topics:`
+    audience: [product]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Product Camp Atlanta"                  # required
+        event_url: ""
+        date: "2022-10"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Atlanta, GA"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+    links:
+      slides: ""
+      video: ""
+
+  - id: research-collab          # required, unique, lowercase-with-dashes
+    title: "Making Research a Team Sport"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      How to include cross-functional stakeholders in the end-to-end research process.
+    topics: [research, collaboration, stakeholders]  # required, ids from `topics:`
+    audience: [ux, product]  # ids from `audiences:`
+    format: talk                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Rosenfeld Media UX Research Conference"                  # required
+        event_url: ""
+        date: "2022-05"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Online"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+        co-presenter: Roberta Dombrowski                        # speaker | keynote | panelist | facilitator | guest
+    links:
+      slides: ""
+      video: ""
+
+  - id: art          # required, unique, lowercase-with-dashes
+    title: "Leveraging AI to Solve Customer Problems"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      A lightning talk on mental models for aligning stakeholders around customer-centric AI use.
+    topics: [ai, collaboration, stakeholders, facilitation]  # required, ids from `topics:`
+    audience: [product]  # ids from `audiences:`
+    format: talk                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Atlanta AI Product Forum"                  # required
+        event_url: ""
+        date: "2023-09"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Atlanta, GA"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+    links:
+      slides: ""
+      video: ""
+
+  - id: moda          # required, unique, lowercase-with-dashes
+    title: "Make at MODA: Light it up!"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      A lantern-making workshop for the Midtown Owl Lantern Parade.
+    topics: [art]  # required, ids from `topics:`
+    audience: [community]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Museum of Design Atlanta"                  # required
+        event_url: ""
+        date: "2023-08"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Atlanta, GA"              # city, or "Virtual"
+        role: instructor                        # speaker | keynote | panelist | facilitator | guest
+    links:
+      slides: ""
+      video: ""
+
+  - id: meetings          # required, unique, lowercase-with-dashes
+    title: "Crafting impactful meetings"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      A workshop for leading intentional, effective meetings.
+    topics: [facilitation, collaboration]  # required, ids from `topics:`
+    audience: [product]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: true                          # not used on the page right now
+    awards: "Best Session Award"                          # shown as a badge
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Product Camp Atlanta"                  # required
+        event_url: ""
+        date: "2023-11"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Atlanta, GA"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+    links:
+      slides: ""
+      video: ""
+
+  - id: stakeholders          # required, unique, lowercase-with-dashes
+    title: "Protect your peace: working with difficult stakeholders"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      A workshop on being your best self while interacting with your most dreaded stakeholders.
+    topics: [stakeholders, collaboration]  # required, ids from `topics:`
+    audience: [product]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Product Camp Atlanta"                  # required
+        event_url: ""
+        date: "2024-09"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Atlanta, GA"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+        co-presenter: Toby Johnson                        # speaker | keynote | panelist | facilitator | guest
+      - event: "Product Coffee"
+        event_url: ""
+        date: ""                             # add, e.g. "2025-05"
+        location: "Online"
+        role: speaker
+    links:
+      slides: ""
+      video: ""
+
+  - id: somatics          # required, unique, lowercase-with-dashes
+    title: "Befriending the nervous system"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      An introduction to embodiment, the nervous system, and trauma.
+    topics: [trauma, somatics]  # required, ids from `topics:`
+    audience: [community]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Southwest Love Fest"                  # required
+        event_url: ""
+        date: "2024-05"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Tucson, AZ"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+      - event: "Southwest Love Fest"
+        event_url: ""
+        date: ""                             # add, e.g. "2025-05"
+        location: "Phoenix, AZ"
+        role: speaker
+    links:
+      slides: ""
+      video: ""
+
+  - id: accountability          # required, unique, lowercase-with-dashes
+    title: "No Cancelling Allowed: Mistakes, Messes, and Making It Right"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      An exploration of cancel culture and how to repair relationships.
+    topics: [repair, somatics]  # required, ids from `topics:`
+    audience: [community]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Southern Fried Queer Pride"                  # required
+        event_url: ""
+        date: "2024-06"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Atlanta, GA"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+    links:
+      slides: ""
+      video: ""
+
+  - id: consent-nsec          # required, unique, lowercase-with-dashes
+    title: "Liberatory Consent: A Next Generation Consent Framework"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      A paradigm shift for consent and an embodied skills framework for cultivating consent culture.
+    topics: [consent, somatics]  # required, ids from `topics:`
+    audience: [educators, community, leaders]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    awards: "Featured Speaker"                          # shown as a badge
+    deliveries:                              # required, at least one
+      - event: "National Sex Ed Conference"                  # required
+        event_url: ""
+        date: "2024-12"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Philadelphia, PA"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+      - event: "Southwest Love Fest"
+        event_url: ""
+        date: ""                             # add, e.g. "2025-05"
+        location: "Phoenix, AZ"
+        length: ""                           # e.g. "1 hour", "3 hours", "6 hours"
+        role: speaker
+      - event: "Southwest Love Fest"
+        event_url: ""
+        date: ""                             # add, e.g. "2025-05"
+        location: "Tucson, AZ"
+        length: ""                           # e.g. "1 hour", "3 hours", "6 hours"
+        role: speaker
+      - event: "Southern Fried Queer Pride"
+        event_url: ""
+        date: ""                             # add, e.g. "2025-05"
+        location: "Atlanta, GA"
+        length: ""                           # e.g. "1 hour", "3 hours", "6 hours"
+        role: speaker
+    links:
+      slides: ""
+      video: ""
+
+  - id: pitching          # required, unique, lowercase-with-dashes
+    title: "Creating Great Workshops for Product Camp"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      A pre-conference program for people interested in pitching and leading sessions at Product Camp.
+    topics: [facilitation]  # required, ids from `topics:`
+    audience: [product, speakers]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Product Camp ATL"                  # required
+        event_url: ""
+        date: "2025-08"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Online"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+    links:
+      slides: ""
+      video: ""
+
+  - id: strategy          # required, unique, lowercase-with-dashes
+    title: "Navigating No-Strategy No Man's Land"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      A pragmatic look at navigating an org with unclear strategy.
+    topics: [strategy, stakeholders]  # required, ids from `topics:`
+    audience: [product, leaders]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "Product Camp ATL"                  # required
+        event_url: ""
+        date: "2025-10"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: "Atlanta, GA"              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+    links:
+      slides: ""
+      video: ""
+
+  - id: power          # required, unique, lowercase-with-dashes
+    title: "The Power We Hold: Navigating Consent and Power Differentials"  # required
+    subtitle: ""                             # optional
+    description: >-                              # required, 1–2 sentences for the card
+      An interactive exploration of how we relate across power differences.
+    topics: [consent, power]  # required, ids from `topics:`
+    audience: [educators, leaders]  # ids from `audiences:`
+    format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
+    featured: false                          # not used on the page right now
+    image: ""                                # optional thumbnail in img/talks/
+    deliveries:                              # required, at least one
+      - event: "National Sex Ed Conference"                  # required
+        event_url: ""
+        date: "2026-02"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
+        location: ""              # city, or "Virtual"
+        role: speaker                        # speaker | keynote | panelist | facilitator | guest
+      - event: "Institute on Consent and Healthy Relationships"
+        event_url: ""
+        date: "2026-06"
+        location: "Philadelphia, PA"
+        role: speaker
+    links:
+      slides: ""
+      video: ""
+
+# ---- Blank template: copy everything below this line for each new talk ----
+#
+#  - id: ""
+#    title: ""
+#    subtitle: ""
+#    topics: []
+#    format: talk
+#    description: >-
+#    audience: []
+#    featured: false
+#    links:
+#      slides: ""
+#      video: ""
+#      writeup: ""
+#    image: ""
+#    deliveries:
+#      - event: ""
+#        event_url: ""
+#        date: ""
+#        location: ""
+#        host: ""          # optional, e.g. the studio or org that hosted it
+#        length: ""        # e.g. "1 hour"; set per event if you give different versions
+#        role: speaker

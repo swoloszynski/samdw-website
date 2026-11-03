@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speaking - Sam Duong Woloszynski</title>
+<meta name="description" content="Talks and workshops by Sam Duong Woloszynski on power, consent, repair, and how product teams work.">
+<link rel="stylesheet" href="styles.css?v=5">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+</head>
+<body class="speaking">
+<div class="topbar"><div class="topbar-inner"><span>NOW BOOKING TALKS &amp; WORKSHOPS</span><span>ATLANTA, GA</span></div></div>
+<div class="wrap">
+  <header class="site-header">
+    <a class="logo" href="index.html">Sam Duong Woloszynski<span>.</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work with me</a>
+      <a href="speaking.html" class="active">Speaking</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <h1 class="h1">Speaking</h1>
+      <p class="lead" id="intro"></p>
+      <div class="btn-row">
+        <a class="btn btn-primary" id="booking" href="contact.html">Book me to speak</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="window">
+        <div class="window-bar"><span class="dot" style="background:#c14953"></span><span class="dot" style="background:#e7c766"></span><span class="dot" style="background:#3a8a86"></span><span class="window-name">productcamp2025.jpg</span></div>
+        <img class="photo" id="headshot" src="img/productcamp2025.jpg" alt="Sam Duong Woloszynski speaking at Product Camp 2025" loading="eager" decoding="async" draggable="false">
+      </div>
+    </div>
+  </section>
+
+  <section class="filter-band" aria-label="Filter talks">
+    <div class="filter-head">
+      <span class="filter-label">What are you looking for?</span>
+      <span class="filter-status"><span id="match-count"></span><button type="button" class="filter-clear" id="clear" hidden></button></span>
+    </div>
+    <div class="filter-group">
+      <span class="filter-sub" id="audience-label">Audience</span>
+      <div class="filter-chips" id="audience-chips" role="group" aria-labelledby="audience-label"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-sub" id="topic-label">Topics</span>
+      <div class="filter-chips" id="topic-chips" role="group" aria-labelledby="topic-label"></div>
+    </div>
+  </section>
+
+  <section class="talks">
+    <ol class="talk-list" id="talk-list"></ol>
+    <p class="talks-empty" id="talks-error" hidden>Talks couldn't load. Try refreshing the page.</p>
+  </section>
+
+  <footer class="site-footer"><span>© 2026 Sam Duong Woloszynski</span><span>Atlanta, GA | Unceded Muscogee land</span></footer>
+</div>
+
+<script>
+(async function () {
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const cap = s => s ? s[0].toUpperCase() + s.slice(1) : '';
+
+  let data;
+  try {
+    data = jsyaml.load(await (await fetch('data/talks.yaml', {cache: 'no-cache'})).text());
+  } catch (e) {
+    console.error(e);
+    $('talks-error').hidden = false;
+    return;
+  }
+
+  const page = data.page || {};
+  if (page.intro) $('intro').textContent = page.intro;
+  if (page.booking_url) $('booking').href = page.booking_url;
+  if (page.headshot) $('headshot').src = page.headshot;
+
+  // Newest delivery first; talks with no date go last
+  const latest = t => (t.deliveries || []).map(d => String(d.date || '')).sort().pop() || '';
+  const talks = (data.talks || []).slice().sort((a, b) => latest(b).localeCompare(latest(a)));
+  // Filter rows. Within a row talks match any selection; across rows they must match each row.
+  const params0 = new URLSearchParams(location.search);
+  const groups = [
+    {field: 'audience', param: 'for', el: 'audience-chips', options: data.audiences},
+    {field: 'topics', param: 'topics', el: 'topic-chips', options: data.topics},
+  ].map(g => {
+    const ids = t => Array.isArray(t[g.field]) ? t[g.field] : [];
+    const count = id => talks.filter(t => ids(t).includes(id)).length;
+    const labels = Object.fromEntries((g.options || []).map(o => [o.id, o.label]));
+    // Most talks first; ties keep YAML order
+    const options = (g.options || []).filter(o => count(o.id) > 0).sort((a, b) => count(b.id) - count(a.id));
+    const selected = new Set((params0.get(g.param) || '').split(',').filter(id => labels[id]));
+    return {...g, ids, count, labels, options, selected};
+  });
+  const [audience, topic] = groups;
+  const selectedCount = () => groups.reduce((n, g) => n + g.selected.size, 0);
+
+  function chip(id, label, n, active) {
+    return `<button type="button" class="topic-chip${active ? ' active' : ''}" data-id="${esc(id)}" aria-pressed="${active}">${esc(label)} <span class="topic-count">${n}</span></button>`;
+  }
+
+  function deliveryHtml(d) {
+    const event = d.event_url ? `<a href="${esc(d.event_url)}" target="_blank" rel="noopener">${esc(d.event)} ↗</a>` : esc(d.event);
+    const bits = [d.location, d.length].filter(Boolean).map(b => `<span>${esc(b)}</span>`).join('');
+    const co = d['co-presenter'] ? `<span class="talk-co">with ${esc(d['co-presenter'])}</span>` : '';
+    const host = d.host ? `<span>Hosted by ${esc(d.host)}</span>` : '';
+    return `<div class="talk-event"><span class="talk-event-name">${event}</span>${host}${bits}${co}</div>`;
+  }
+
+  function talkHtml(t) {
+    const year = latest(t).slice(0, 4);
+    const tagsFor = g => g.ids(t).filter(id => g.labels[id]).map(id =>
+      `<span class="topic-tag${g.selected.has(id) ? ' match' : ''}">${esc(g.labels[id])}</span>`).join('');
+    const who = tagsFor(audience);
+    const links = Object.entries(t.links || {}).filter(([, url]) => url).map(([k, url]) =>
+      `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(cap(k))} ↗</a>`).join('');
+    return `<li class="talk-row">
+      <div class="talk-year">${esc(year)}</div>
+      <div class="talk-body">
+        ${t.awards ? `<div class="talk-award">★ ${esc(t.awards)}</div>` : ''}
+        <h2 class="talk-title">${esc(t.title)}</h2>
+        ${t.subtitle ? `<p class="talk-sub">${esc(t.subtitle)}</p>` : ''}
+        ${t.description ? `<p class="talk-desc">${esc(t.description)}</p>` : ''}
+        ${who ? `<div class="talk-tags"><span class="tag-label">For</span>${who}</div>` : ''}
+        <div class="talk-tags"><span class="tag-label">Topics</span>${tagsFor(topic)}</div>
+      </div>
+      <div class="talk-side">
+        ${(t.deliveries || []).map(deliveryHtml).join('')}
+        ${links ? `<div class="talk-links">${links}</div>` : ''}
+      </div>
+    </li>`;
+  }
+
+  function render() {
+    const shown = talks.filter(t => groups.every(g => !g.selected.size || g.ids(t).some(id => g.selected.has(id))));
+    const params = new URLSearchParams(location.search);
+    for (const g of groups) {
+      $(g.el).innerHTML = chip('', 'All', talks.length, g.selected.size === 0) +
+        g.options.map(o => chip(o.id, o.label, g.count(o.id), g.selected.has(o.id))).join('');
+      if (g.selected.size) params.set(g.param, [...g.selected].join(',')); else params.delete(g.param);
+    }
+    $('match-count').textContent = `${shown.length} of ${talks.length} talks`;
+    $('clear').hidden = selectedCount() === 0;
+    $('clear').textContent = `Clear (${selectedCount()})`;
+    $('talk-list').innerHTML = shown.length ? shown.map(talkHtml).join('')
+      : '<li class="talks-empty">No talks match that combination yet.</li>';
+
+    const qs = params.toString();
+    history.replaceState(null, '', location.pathname + (qs ? `?${qs}` : ''));
+  }
+
+  for (const g of groups) {
+    $(g.el).addEventListener('click', e => {
+      const btn = e.target.closest('.topic-chip');
+      if (!btn) return;
+      const id = btn.dataset.id;
+      if (!id) g.selected.clear();
+      else if (g.selected.has(id)) g.selected.delete(id);
+      else g.selected.add(id);
+      render();
+    });
+  }
+  $('clear').addEventListener('click', () => { groups.forEach(g => g.selected.clear()); render(); });
+
+  render();
+})();
+</script>
+</body>
+</html>
