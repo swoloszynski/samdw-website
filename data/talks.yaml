@@ -394,7 +394,7 @@ talks:
     subtitle: ""                             # optional
     description: >-                              # required, 1–2 sentences for the card
       A paradigm shift for consent and an embodied skills framework for cultivating consent culture.
-    topics: [consent, somatics]  # required, ids from `topics:`
+    topics: [consent, somatics, power]  # required, ids from `topics:`
     audience: [educators, community, leaders]  # ids from `audiences:`
     format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
     featured: false                          # not used on the page right now
@@ -453,7 +453,7 @@ talks:
     subtitle: ""                             # optional
     description: >-                              # required, 1–2 sentences for the card
       A pragmatic look at navigating an org with unclear strategy.
-    topics: [strategy, stakeholders]  # required, ids from `topics:`
+    topics: [strategy, stakeholders, power]  # required, ids from `topics:`
     audience: [product, leaders]  # ids from `audiences:`
     format: workshop                             # talk | keynote | workshop | panel | podcast | webinar
     featured: false                          # not used on the page right now
