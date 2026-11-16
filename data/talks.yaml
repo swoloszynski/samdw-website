@@ -133,6 +133,48 @@ talks:
       slides: ""
       video: ""
 
+  - id: honest-feedback
+    title: "I Want Your Honest Feedback"
+    subtitle: ""
+    description: >-
+      A workshop for product managers on designing good feedback questions,
+      making space for honest answers, and modeling trust-based feedback culture.
+    topics: [collaboration, somatics, power, stakeholders]
+    audience: [leaders, product]
+    format: workshop
+    featured: false
+    image: ""
+    deliveries:
+      - event: "Product Camp Atlanta"
+        event_url: ""
+        date: "2026-11"
+        location: "Atlanta, GA"
+        role: facilitator
+    links:
+      slides: ""
+      video: ""
+
+  - id: women-in-tech-ai
+    title: "Women in Tech Surviving AI"
+    subtitle: ""
+    description: >-
+      A discussion by and for women product managers in tech navigating the AI
+      revolution.
+    topics: [collaboration, stakeholders, ai]
+    audience: [product]
+    format: panel
+    featured: false
+    image: ""
+    deliveries:
+      - event: "Product Camp Atlanta"
+        event_url: ""
+        date: "2026-11"
+        location: "Atlanta, GA"
+        role: speaker
+    links:
+      slides: ""
+      video: ""
+
   - id: comfortable-with-no
     title: "Getting Comfortable with No"
     subtitle: ""
@@ -344,7 +386,34 @@ talks:
       slides: ""
       video: ""
 
-  - id: somatics          # required, unique, lowercase-with-dashes
+  - id: ai-panel
+    title: "AI-Powered Product Management: How to Level Up"
+    subtitle: ""
+    description: >-
+      A panel discussion about using AI effectively as a product manager.
+    topics: [ai, strategy]
+    audience: [product]
+    format: panel
+    featured: false
+    image: ""
+    deliveries:
+      - event: "Product Camp Atlanta"
+        event_url: ""
+        date: "2024-09"
+        location: "Atlanta, GA"
+        role: panelist
+        co-presenter: Edie Kirkman, Sarah Woodward, Devin Smith, and John Mansour
+      - event: "Product Coffee"
+        event_url: ""
+        date: ""                             # add, e.g. "2025-05"
+        location: "Online"
+        role: panelist
+        co-presenter: Edie Kirkman, Sarah Woodward, Devin Smith, and John Mansour
+    links:
+      slides: ""
+      video: ""
+
+  - id: somatics         # required, unique, lowercase-with-dashes
     title: "Befriending the nervous system"  # required
     subtitle: ""                             # optional
     description: >-                              # required, 1–2 sentences for the card
