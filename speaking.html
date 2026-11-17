@@ -55,7 +55,7 @@
 
   <section class="talks">
     <ol class="talk-list" id="talk-list"></ol>
-    <p class="talks-empty" id="talks-error" hidden>Talks couldn't load. Try refreshing the page.</p>
+    <p class="talks-empty" id="talks-error" hidden>Sessions couldn't load. Try refreshing the page.</p>
   </section>
 
   <footer class="site-footer"><span>© 2026 Sam Duong Woloszynski</span><span>Atlanta, GA | Unceded Muscogee land</span></footer>
@@ -148,11 +148,11 @@
         g.options.map(o => chip(o.id, o.label, g.count(o.id), g.selected.has(o.id))).join('');
       if (g.selected.size) params.set(g.param, [...g.selected].join(',')); else params.delete(g.param);
     }
-    $('match-count').textContent = `${shown.length} of ${talks.length} talks`;
+    $('match-count').textContent = `${shown.length} of ${talks.length} sessions`;
     $('clear').hidden = selectedCount() === 0;
     $('clear').textContent = `Clear (${selectedCount()})`;
     $('talk-list').innerHTML = shown.length ? shown.map(talkHtml).join('')
-      : '<li class="talks-empty">No talks match that combination yet.</li>';
+      : '<li class="talks-empty">No sessions match that combination yet.</li>';
 
     const qs = params.toString();
     history.replaceState(null, '', location.pathname + (qs ? `?${qs}` : ''));

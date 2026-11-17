@@ -686,6 +686,7 @@ talks:
     audience: [community]
     format: tour
     featured: false
+    years: "2018-2019"
     image: ""
     deliveries:
       - event: "City on the Side"
