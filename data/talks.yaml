@@ -578,7 +578,7 @@ talks:
       - event: "National Sex Ed Conference"                  # required
         event_url: ""
         date: "2026-02"                   # required, YYYY-MM-DD (or "2025-05" if unsure)
-        location: ""              # city, or "Virtual"
+        location: "Baltimore, MD"              # city, or "Virtual"
         role: speaker                        # speaker | keynote | panelist | facilitator | guest
       - event: "Institute on Consent and Healthy Relationships"
         event_url: ""
