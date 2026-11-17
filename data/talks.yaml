@@ -134,6 +134,29 @@ talks:
       slides: ""
       video: ""
 
+  - id: consent-lab
+    title: "Liberatory Consent Lab"
+    subtitle: ""
+    description: >-
+      A monthly workshop on relationship skills, including embodied consent
+      skills, power dynamics, shame resilience, desire, pleasure, boundaries,
+      and accountability.
+    topics: [somatics, power, consent, repair]
+    audience: [community, educators]
+    format: workshop
+    featured: false
+    years: "2025-2026"
+    image: ""
+    deliveries:
+      - event: "Nourished Heart Collective"
+        event_url: ""
+        date: ""
+        location: "Online"
+        role: facilitator
+    links:
+      slides: ""
+      video: ""
+
   - id: honest-feedback
     title: "I Want Your Honest Feedback"
     subtitle: ""
