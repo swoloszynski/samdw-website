@@ -472,6 +472,7 @@ talks:
     image: ""                                # optional thumbnail in img/talks/
     awards: "Featured Speaker"                          # shown as a badge
     training: "Full-day training"                # optional outlined badge for long formats
+    years: "2024-2025"                          # optional year range, when deliveries are undated
     deliveries:                              # required, at least one
       - event: "National Sex Ed Conference"                  # required
         event_url: ""

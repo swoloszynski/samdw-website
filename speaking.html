@@ -81,8 +81,10 @@
   if (page.booking_url) $('booking').href = page.booking_url;
   if (page.headshot) $('headshot').src = page.headshot;
 
-  // Newest delivery first; talks with no date go last
-  const latest = t => (t.deliveries || []).map(d => String(d.date || '')).sort().pop() || '';
+  // Newest delivery first; talks with no date go last. `years` (e.g. "2023-2025") widens the range.
+  const dates = t => [...(t.deliveries || []).map(d => String(d.date || '')), ...String(t.years || '').split(/[-–]/)]
+    .map(s => s.trim()).filter(Boolean).sort();
+  const latest = t => dates(t).pop() || '';
   const talks = (data.talks || []).slice().sort((a, b) => latest(b).localeCompare(latest(a)));
   // Filter rows. Within a row talks match any selection; across rows they must match each row.
   const params0 = new URLSearchParams(location.search);
@@ -114,14 +116,15 @@
   }
 
   function talkHtml(t) {
-    const year = latest(t).slice(0, 4);
+    const first = (dates(t)[0] || '').slice(0, 4), last = latest(t).slice(0, 4);
+    const year = first && first !== last ? `${esc(first)} - ${esc(last)}` : esc(last);
     const tagsFor = g => g.ids(t).filter(id => g.labels[id]).map(id =>
       `<span class="topic-tag${g.selected.has(id) ? ' match' : ''}">${esc(g.labels[id])}</span>`).join('');
     const who = tagsFor(audience);
     const links = Object.entries(t.links || {}).filter(([, url]) => url).map(([k, url]) =>
       `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(cap(k))} ↗</a>`).join('');
     return `<li class="talk-row">
-      <div class="talk-year">${esc(year)}</div>
+      <div class="talk-year">${year}</div>
       <div class="talk-body">
         ${t.awards || t.training ? `<div class="talk-badges">${t.awards ? `<span class="talk-award">★ ${esc(t.awards)}</span>` : ''}${t.training ? `<span class="talk-length">${esc(t.training)}</span>` : ''}</div>` : ''}
         <h2 class="talk-title">${esc(t.title)}</h2>
