@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Speaking - Sam Duong Woloszynski</title>
 <meta name="description" content="Talks and workshops by Sam Duong Woloszynski on power, consent, repair, and how product teams work.">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 </head>
 <body class="speaking">
@@ -123,7 +123,7 @@
     return `<li class="talk-row">
       <div class="talk-year">${esc(year)}</div>
       <div class="talk-body">
-        ${t.awards ? `<div class="talk-award">★ ${esc(t.awards)}</div>` : ''}
+        ${t.awards || t.training ? `<div class="talk-badges">${t.awards ? `<span class="talk-award">★ ${esc(t.awards)}</span>` : ''}${t.training ? `<span class="talk-length">${esc(t.training)}</span>` : ''}</div>` : ''}
         <h2 class="talk-title">${esc(t.title)}</h2>
         ${t.subtitle ? `<p class="talk-sub">${esc(t.subtitle)}</p>` : ''}
         ${t.description ? `<p class="talk-desc">${esc(t.description)}</p>` : ''}

@@ -100,6 +100,7 @@ talks:
     audience: [community]
     format: workshop
     featured: false
+    training: "Two-day training"
     image: ""
     deliveries:
       - event: "Chantelle Rytter's Lantern Parade Art Studio"
@@ -227,6 +228,7 @@ talks:
     audience: [educators]  # ids from `audiences:`
     format: workshop
     featured: false
+    training: "Full-day training"
     image: ""
     deliveries:
       - event: "Private training"
@@ -469,6 +471,7 @@ talks:
     featured: false                          # not used on the page right now
     image: ""                                # optional thumbnail in img/talks/
     awards: "Featured Speaker"                          # shown as a badge
+    training: "Full-day training"                # optional outlined badge for long formats
     deliveries:                              # required, at least one
       - event: "National Sex Ed Conference"                  # required
         event_url: ""
